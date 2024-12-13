@@ -1,0 +1,187 @@
+All the commands used in linux is in bin.
+
+cd /  -> to go to root
+cd [path]
+
+mkdir -p "ansh1/ansh2/ansh3" -> this creates nested directories (-p -> path)
+
+touch .filename -> creates a hidden file
+
+ls -a -> shows all files including hidden files
+
+ls -A -> to show all files including hidden files without directory files(. or ..)
+
+ls -l -> shows all files line by line with size
+
+su root ->its usde to give current user super user role 
+
+exit -> its used to get out of super user
+
+two types of path->
+1. Relative path -> path related to current path
+2. Absolute path -> path starting from root
+
+to check all variation of command use [command] --help
+
+to clear use clear
+
+shortcuts
+1. to open terminal -> ctrl + alt + t
+2. to close terminal-> ctrl + d
+
+#############################
+~ -> user 
+/home -> home
+/ -> root 
+#############################
+
+1. /bin -> contails all the files for commands
+
+2. /sbin-> contails all commands which are used for changing system properties.
+basically used to modify users.
+
+3. /boot -> The contents are mostly Linux kernel files and bootloaderfiles(files needed to start up the operating system) 
+
+4. /dev -> This contains device files 
+
+This file represents your speaker device,keyboard 
+
+5. /etc -> 
+it contains all system related configuration files in here or in its sub-directories 
+A "configuration file" is defined as a local file used to control the operation of a program; 
+it cannot be an executable binary. 
+Ex:-adduser.conf, theme config 
+
+6. /cdrom -> 
+directory is a standard practice to mount cd, but not necessary. We use media and mnt to mount anything these days 
+In Linux and other Unix-like operating systems, /cdrom is commonly used as the default directory where the contents of a CD or DVD inserted into the computer's optical drive are mounted. 
+When you insert a CD or DVD, the system may automatically mount it to the /cdrom directory (or it could be mounted manually). 
+You can view the contents of the disc by navigating to this directory in the terminal. 
+
+7. /home->
+The home directory can be said as a personal working space for all the users except root.  
+There is a separate directory for every user. 
+For example, two users ‘ansh' and ‘kaemi' will have directories like "/home/ansh“ and "/home/kaemi“
+
+8 ./lib :- 
+The /lib directory contains shared libraries and kernel modules that are necessary to boot and run the system.  
+These libraries are used by essential system binaries located in directories like /bin and /sbin. 
+Shared libraries are files that contain code or data that multiple programs can use simultaneously.  
+Instead of having the same code duplicated in every executable, the system allows programs to load a shared library into memory when they need it. This improves efficiency and saves disk space. 
+The shared libraries in /lib are generally required by programs in /bin (basic user commands) and /sbin (system administration commands). Without these shared libraries, programs might fail to run 
+Difference between lib, lib32, lib64, libx32 
+
+lib :-architecture independent files. 
+
+lib32 :-for 32 bit architecture libraries 
+
+lib64 :-for 64 bit architecture libraries 
+
+libx32 :-for 64 bit architecture libraries but the pointer size is 32 bit, 
+
+Normally software using the x86-64 instruction set uses 64-bit pointer size.
+
+9. /media :- 
+When you connect a removable media such as USB disk, SD card or DVD, a directory is automatically created under the /media directory for them. You can access the content of the removable media from this directory. 
+
+ 
+10. /mnt – 
+Mount directoryThis is similar to the /media directory but instead of automatically mounting the removable media, mnt is used by system administrators to manually mount a filesystem 
+mounting refers to the process of making a filesystem accessible to the operating system's directory structure. It is essentially the act of attaching an external storage device (like a hard drive, USB stick, or CD-ROM) or a remote filesystem to a specific location (a directory) within the main filesystem. 
+
+11. /opt – 
+Optional softwareTraditionally, the /opt directory is used for installing/storing the files of third-party applications that are not available from the distribution’s repository. 
+In the old days, "/opt" was used by UNIX vendors like AT&T, Sun, DEC and 3rd-party vendors to hold "Option" packages; i.e. packages that you might have paid extra money for. 
+
+12. /proc :- 
+It contains useful information about the processes that are currently running.It could be used for obtaining information about a system, we can also edit the config files related to kernel here. 
+
+ 
+13. /root :- 
+it works as the home directory of the root user. So instead of /home/root, the home of root is located at /root. root directory (/) is different from root user directory. 
+
+ 
+14. /tmp :- 
+this directory holds temporary files. Many applications use this directory to store temporary files. Even you can use directory to store temporary files. 
+the contains of the /tmp directories are deleted when your system restarts. Some Linux system also delete files old files automatically so don’ store anything important here. 
+
+ 
+
+15. /var :- 
+stores system-generated variable data files. This includes spool directories and files, administrative and logging data, cache, transient and temporary files. 
+Ex :-/var/spool contains data which is awaiting some kind of later processing/run :-runtime variable data. 
+The purposes of this directory were once served by /var/run, system may use both 
+
+16 /srv :- 
+This directory gives users the location of data files for a particular service. 
+For example, if you run a HTTP or FTP server, it’s a good practice to store the website data in the /srv directory. 
+
+ 
+17 /usr :-  
+User System Resources. in ‘/usr’ go all the executable files, libraries, source of most of the system programs.  
+For this reason, most of the files contained therein is readonly (for the normal user). 
+
+
+18 /sys :- 
+allows you to get information about the system and its components (mostly attached and installed hardware) in a structured way. 
+Ex:-device, kernel, firmware 
+
+ 
+19 /snap :- 
+The /snap directory is, by default, where the files and folders from installed snap packages appear on your system. 
+
+
+########################################################################################################################3
+
+Various options of ls Command: 
+
+1) ls 
+It will display all files and directories according to alphabetical order of names. 
+
+ 
+
+2) ls -r 
+It will display all files and directories in reverse of aplhabetical order. 
+
+
+3) ls | more 
+To display content line by line 
+(To come out we have to use q) 
+
+ 
+
+4)ls -l 
+To display long listing of files 
+
+ 
+
+5) ls -t 
+To display all files based on last modified date and time. Most recent is at top and old 
+are at bottom. 
+
+6) ls -rt 
+To display all files based on reverse of last modified date and time. Old files are at top 
+and recent files are at bottom. 
+
+7) ls -a 
+a means all 
+To display all files including hidden files. Here . and .. also will be displayed. 
+
+8) ls -A 
+A means almost all 
+To display all files including hidden files except . and .. 
+
+9) ) ls -h 
+display in human readable format 
+
+10) ls -R 
+R means Recursive. 
+It will list all files and directories including sub directory contents also. By default ls 
+will display only direct contents but not sub directory contents. 
+
+
+
+
+
+
+
