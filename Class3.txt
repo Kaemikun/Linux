@@ -1,0 +1,103 @@
+mkdir fol{1..100}  // makes 100 folder
+rmdir fol{1..100} //removes 100 files
+
+mv t1.txt t2.txt  //renames t1.txt to t2.txt
+
+mkdir a1/a2/a3  //if a1/a2 exists a3 will be created else will give error
+
+cat commands ->
+To create new file with some content 
+$ cat > filename data ctrl+d 
+
+
+To append some extra data to existing file 
+$ cat >> filename extra data ctrl+d 
+
+To view content of file 
+$ cat < filename or $ cat filename 
+
+Copy content of one file to another file 
+$ cat input.txt > output.txt 
+
+To copy content of multiple files to a single file 
+$ cat file1.txt file2.txt file3.txt > file4.txt 
+
+Merging/appending of one file content to another file 
+$ cat file1.txt >> file2.txt 
+
+
+
+cat -n filename //gives numbering to line
+cat -b filename //gives numbering to lines except blankspaces
+
+tac filename //reverse file vertically (ulta of cat)
+
+rev filename // reverse horizontally content of file( like Ansh = hsnA)
+
+
+head commands:
+
+head filename //prints top 10 lines
+
+head -n 30 filename // displays top  30 lines
+
+head -c 30 filename // displays first 100 bytes of content
+
+
+
+tail commands:
+
+tail filename //displays bottom 10 lines
+
+tail -n 30 filename //displays bottom 30 lines
+
+tail -n + 4 filename  //displays from line 4
+
+tail -c 200 filename //displays bottom 200 bytes of content
+
+
+
+
+
+
+
+more : 
+
+We can use more command to view file content page by page. 
+
+✽ more file1.txt 
+
+It will display first page. 
+
+ 
+
+Enter     To view next line 
+
+ Space Bar     To view next page 
+
+ q     To quit/exit 
+
+
+
+
+✽ more -d file1.txt 
+
+-d option meant for providing details like --More--(5%)[Press space to continue, 'q' to quit.] 
+
+less : 
+
+ 
+
+ 
+
+By using more command, we can view file content page by page only in forward direction. 
+
+ 
+
+ 
+
+If we want to move either in forward direction or in backward direction then we should go for less command. 
+
+ d  To go to next page.(d means down)  
+
+b To go to previous page. (b means backward) 
