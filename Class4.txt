@@ -1,0 +1,77 @@
+ls -l
+
+
+d -> directory
+r-> read
+w-> write
+x-> execute
+
+9 hiphens
+
+- - -                - - -                   - - -
+ ||                    ||                     ||
+user/owner           Groups                  Others
+
+if its starting from - its a file
+if its starting from d its a directory
+
+
+comamnds->
+
+chmod -> modify permissions
+u -> user
+g -> group
+o -> others
+
+*for adding a permission use '+'
+*for removing a permission use '-'
+*for assigning or replacing current permission to given perm use '='
+(can assign multiple perms at same time using u=rwx etc.
+
+
+chmod u+x,g+w,o-r filename
+this command will add execute(x) role to users , adds write(w) to groups , removes read from others
+
+
+Number permissions
+1-> execute(x)
+2-> write(w)
+3-> wx
+4-> r
+5-> rx
+6-> rw
+7-> rwx
+
+chmod 777 filename
+*this will give all rwx permissions to all user, group, other
+
+chmod 774 filename
+*this wil give rwx to user and groups and read to others
+
+
+
+vim -> file editor
+commands->
+
+vim filename
+
+to save go to next line
+click esc then press shift + colon
+write wq to save and exit
+
+
+
+nano -> file editor
+commands->
+
+nano filename
+
+write anythin...
+
+u can see the commands below
+to save -> ctrl + o
+to exit -> ctrl +x
+
+
+
+
