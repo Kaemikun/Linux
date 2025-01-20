@@ -1,0 +1,159 @@
+-----process management----- 
+
+first process is init/systemd and it does not have any parent demon ----> process which are started with system and keep running demon never dies 
+
+ ps :- 
+
+ps ------- > means process status 
+
+if we don't pass any argument then it shows processes related to current session 
+
+
+ 
+
+ps -e  -------> everything it shows all the process  
+
+ 
+
+
+a process that is not associated with terminal will show ? in tty field 
+
+ps -f -------> full form 
+
+ 
+
+
+UID   UserId/ User Name 
+
+PID   Process ID (Every Process has Unique ID) 
+
+ 
+
+ 
+
+PPID     Parent Process ID 
+
+Time --> CPU Utilization Time Stime ---> start time c ----> cpu usage % 
+
+processes related to a perticular user ps -u username 
+
+process with name  
+
+ 
+
+
+I want to know process of id of perticular command 
+
+ps -aux 
+
+all user extra , Shows a detailed listing of all processes running on the system, including those started by other  
+
+users, and additional information about each process. 
+
+ps -t terminal to show all the processes related to a specific terminal  
+
+ 
+
+
+ps -G groupId   ----> to show all process related to groupId 
+
+ps -C commandname   -----> to show all process related to a perticular command 
+
+ps -l  ----> longform shows additional info about each process 
+
+ 
+
+
+F         ------> The process's flags or state. 
+
+UID      -----> The user ID of the process owner. 
+
+PID       -----> The process ID of the process. 
+
+PPID      ---->The parent process ID of the process. 
+
+C:           ---->The CPU utilization of the process. 
+
+PRI:       ---->The priority of the process. 
+
+NI:       ----->The nice value of the process. 
+
+ADDR:   ---> The memory address of the process. 
+
+SZ:          ---> The size of the process in memory (in kilobytes). 
+
+WCHAN: --> The name of the kernel function that the process is waiting on. 
+
+TTY:        ---> The terminal that the process is running on. 
+
+TIME:   ----->The CPU time used by the process. 
+
+CMD:    ----->The command that started the process. 
+
+ps -r   ----> view all the running processes 
+
+ps --ppid PPID  ------> process related to parent process id 
+
+here I am creating a compressed archieve of all files and folders inside 
+
+pictures folder using bzip2 compression algo 
+
+then suspending or stopping the job then moving that job in background  
+
+bg         -----> will move last job in background bg %+   -----> will move last job in background bg % -   -----> will move last to last job in background bg %n   -----> will move nth job in background  
+
+ 
+
+kill :- 
+
+kill pid   ----> kill process kill -9 pid   ----> focefully terminate  
+
+kill -STOP  pid  ----->  to stop/pause a process kill -CONT pid  -----> to start/resume a process  
+
+ killall :- 
+
+using killall command we can kill a process by name 
+
+-r  ----> we can use regular expression 
+
+-v ----> verbose 
+
+-i  ----> intrective  
+
+-I  ----> ignore case  ( capital i)  
+
+ 
+
+ 
+
+10. Top :- 
+
+ 
+
+ 
+
+------->   Uptime    , user count , load average ,  
+
+------->  cpu count ( press 1 to check other cpus ), user process, system                         process, nice value, idle, 
+
+                        hardware intrupt, system interrupt, stolen time     3    ------->   free 
+
+Res ----> reserved memory Virt -----> virtual memory 
+
+Shr  -----> shared memory 
+
+S ----> running , stopped , idle etc 
+
+Press u ----> enter username 
+
+K   ----> kill  
+
+‘M’ to sort by memory usage 
+
+‘P’ to sort by CPU usage 
+
+‘N’ to sort by process ID 
+
+‘T’ to sort by the running time 
+
+By default, top displays all results in descending order. However, you can switch to ascending order by pressing ‘R’ 
