@@ -1,0 +1,86 @@
+ls
+ls -a
+ls -A
+ls -t
+ls -l
+ls-r
+pwd
+
+mkdir
+mkdir -p
+rmdir
+rm
+rm -r
+
+touch
+
+cp 
+mv
+
+cd
+cd ..
+cd ~
+cd /
+cd [dir_name]
+
+cat
+cat > file.txt
+cat < file.txt
+cat >> file.txt
+tac file.txt
+
+chmod u=... g = ... o = .... file.txt
+chmod 777 file.txt
+
+ps
+top
+kill pid
+kill -9 pid
+
+nano
+vim
+vi
+
+sudo apt update
+sudo apt ugrade
+sudo apt install
+sudo apt remove
+
+clear
+
+sort filename
+uniq filename | sort
+
+more
+less 
+head 
+tail
+
+ping
+
+date 
+cal
+
+history
+
+man
+
+du -> disk usage
+du Bg
+du Bm
+
+df -> disk free
+
+uname -o -> operating system
+uname -r -> release name
+uname -v -> current kurnel ver
+uname -s -> kernel name
+uname -j -> hardware platform
+uname -m -> machine hardware name
+uname -p -> processor name
+
+
+
+
+
+
