@@ -1,0 +1,303 @@
+Users details are in etc passwd folder.
+
+to add a user ->
+sudo adduser [new_user_name]
+
+to delete a user->
+sudo deluser [user_name]
+
+to create a group->
+sudo groupadd [group_name]
+
+###############################################################
+
+1. Creating and Managing Users 
+
+1.1 Creating a New User: adduser 
+
+The adduser command is the recommended way to create a new user because it is interactive and sets up user directories, shell, and group membership. 
+
+🔍 Syntax: 
+
+ 
+
+sudo adduser <username> 
+
+🔍 Example: 
+
+sudo adduser john 
+
+This will prompt you to enter the following details: 
+
+Password 
+
+Full Name (optional) 
+
+Room Number (optional) 
+
+Work Phone (optional) 
+
+Home Phone (optional) 
+
+Other (optional) 
+
+Once completed, the new user is created, and you can assign them additional privileges (e.g., adding to groups). 
+
+ 
+ 
+
+1.2 Creating a User Without Interaction: useradd 
+
+For scripting or automation, you can use useradd, which does not prompt for input. You'll need to specify all parameters, such as the home directory. 
+
+🔍 Syntax: 
+
+ 
+
+sudo useradd -m -s /bin/bash -G <group> <username> 
+
+-m: Creates a home directory for the user. 
+
+-s /bin/bash: Specifies the user's shell. 
+
+-G <group>: Adds the user to a group. 
+
+🔍 Example: 
+
+sudo useradd -m -s /bin/bash -G sudo john 
+
+ 
+ 
+
+1.3 Setting a User's Password: passwd 
+
+After creating a user, you can set or change their password using the passwd command. 
+
+🔍 Syntax: 
+
+sudo passwd <username> 
+
+🔍 Example: 
+
+sudo passwd john 
+
+You'll be prompted to enter a new password for the user. 
+
+ 
+ 
+
+1.4 Deleting a User: deluser 
+
+To delete a user and optionally remove their home directory, you can use the deluser command. 
+
+🔍 Syntax: 
+
+sudo deluser <username> 
+
+🔍 Example: 
+
+sudo deluser john 
+
+🔍 Delete the user's home directory as well: 
+
+sudo deluser --remove-home john 
+
+ 
+ 
+
+2. Managing Groups 
+
+2.1 Creating a Group: groupadd 
+
+You can create a new group using the groupadd command. 
+
+🔍 Syntax: 
+
+sudo groupadd <groupname> 
+
+🔍 Example: 
+
+ 
+
+sudo groupadd developers 
+
+ 
+ 
+
+2.2 Adding a User to a Group: usermod 
+
+To add a user to a group, you can use usermod with the -aG option, which appends the user to a specified group. 
+
+🔍 Syntax: 
+
+ 
+
+sudo usermod -aG <groupname> <username> 
+
+🔍 Example: 
+
+ 
+
+sudo usermod -aG developers john 
+
+This will add the user john to the developers group. The -a ensures that the user is appended to the group (without removing them from any other group). 
+
+ 
+ 
+
+2.3 Removing a User from a Group: gpasswd 
+
+To remove a user from a group, use gpasswd. 
+
+🔍 Syntax: 
+
+ 
+
+sudo gpasswd -d <username> <groupname> 
+
+🔍 Example: 
+
+ 
+
+sudo gpasswd -d john developers 
+
+This will remove the user john from the developers group. 
+
+ 
+ 
+
+2.4 Deleting a Group: groupdel 
+
+To delete a group, use the groupdel command. 
+
+🔍 Syntax: 
+
+ 
+
+sudo groupdel <groupname> 
+
+🔍 Example: 
+
+ 
+
+sudo groupdel developers 
+
+ 
+ 
+
+3. Viewing Users and Groups 
+
+3.1 Viewing Users 
+
+To see all users on the system, you can view the /etc/passwd file, which lists user accounts. 
+
+🔍 Command: 
+
+ 
+
+cat /etc/passwd 
+
+Each line represents a user, with fields such as username, UID, GID, home directory, and shell. 
+
+ 
+ 
+
+3.2 Viewing Groups 
+
+To see all groups, you can view the /etc/group file. 
+
+🔍 Command: 
+
+cat /etc/group 
+
+Each line represents a group, with fields such as group name, group password (usually x), GID, and group members. 
+
+ 
+ 
+
+3.3 Check User's Groups: groups 
+
+To see which groups a user belongs to, use the groups command. 
+
+🔍 Syntax: 
+
+groups <username> 
+
+🔍 Example: 
+
+groups john 
+
+ 
+ 
+
+4. Modifying User and Group Settings 
+
+4.1 Changing User Information: usermod 
+
+You can modify various attributes of a user, such as their home directory, shell, or login name. 
+
+Change a user’s home directory: 
+
+ 
+
+sudo usermod -d /new/home/directory john 
+
+Change a user’s login name: 
+
+ 
+
+sudo usermod -l newname john 
+
+4.2 Changing a Group Name: groupmod 
+
+To rename an existing group, use the groupmod command. 
+
+🔍 Syntax: 
+
+sudo groupmod -n newgroupname oldgroupname 
+
+🔍 Example: 
+
+sudo groupmod -n dev_team developers 
+
+ 
+ 
+
+5. Practical Lab Examples 
+
+Here are some real-world tasks you can perform in your lab to reinforce the user and group management concepts: 
+
+ 
+ 
+
+Example 1: Create a user and assign to a group 
+
+Create a new user called alice: 
+ 
+sudo adduser alice 
+
+Create a group called admin: 
+ 
+sudo groupadd admin 
+
+Add alice to the admin group: 
+ 
+sudo usermod -aG admin alice 
+
+ 
+ 
+
+Example 2: Delete a user and remove their home directory 
+
+Delete bob: 
+ 
+sudo deluser --remove-home bob 
+
+ 
+ 
+
+Example 3: Modify user settings 
+
+Change alice’s home directory: 
+ 
+sudo usermod -d /home/alice_new alice 
