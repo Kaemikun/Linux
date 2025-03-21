@@ -1,0 +1,13 @@
+1. lsblk ->
+listing block size wise
+
+2. sudo fdisk -l ->
+detailed view with size of list shown in lsblk
+
+3. sudo fdisk [path_name] ->
+can change the partition of specific space 
+
+3.1 d -> delete
+3.2 n -> new partition
+3.3 w -> write /save
+
